@@ -1,11 +1,12 @@
-import services.assignBranch as assignBranch
+import services.assign.assignBranch as assignBranch
+import services.create.createBranch as createBranch
 
 
 def abrirNodo(palabraDividida, arrayNombres):
     for palabra in palabraDividida:
         if palabra == "crear":
             palabraDividida.remove("crear")
-            # ramaCrear()
+            createBranch.crear(palabraDividida)
             break
         if palabra == "llamar":
             palabraDividida.remove("llamar")
