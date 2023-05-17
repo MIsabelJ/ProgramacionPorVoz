@@ -62,7 +62,7 @@ def ramaCrear():
              for j in range(len(array)):
                  #Bucle for
                  if(array[j] == "for" or array[j] == "para"):
-                     tipo = array[j]
+                     tipo = "for"
                      for k in range(len(array)):
                          if(array[k] == "desde" and array[k+2] == "hasta"):
                              x = array[k+1]
@@ -76,11 +76,11 @@ def ramaCrear():
 
                  #Blucle while
                  elif(array[j] == "while" or array[j] == "mientras"):
-                     tipo = array[j]
+                     tipo = "while"
+                     salida = f"{tipo}"
                      for k in range(len(array)):
-                         if(array[-k-1] == "si"):
-                             print(f"{array[k+3]} {array[k+4]} {array[k+5]} {array[k+6]} {array[k+7]}")
-                         salida = " "
+                         condicion = f" " 
+                         salida = f"{tipo} {condicion}"
                      break
              
                  
@@ -93,7 +93,7 @@ def ramaCrear():
 
    
 
-ejemplo = "crear un bucle while que se repita si a es igual que 0"
+ejemplo = "asignar a la variable con el nombre numero el valor 10"
 array = ejemplo.split(" ")
 arrayVariables = ["numero", "edad", "cantidad", "sueldo"]
 
