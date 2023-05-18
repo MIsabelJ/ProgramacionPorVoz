@@ -1,5 +1,8 @@
-def crear(palabraDividida):
-    indicadoresElemetos = [
+from . import variable as variable
+from . import funcion as funcion
+
+def crear(instruccion, arrayIdentificadores):
+    indicadoresElementos = [
         "variable",
         "funcion",
         "metodo",
@@ -18,36 +21,29 @@ def crear(palabraDividida):
         "imprimir"
     ]
 
-    for palabra in palabraDividida:
+    for palabra in instruccion:
         if palabra == "variable":
-            palabraDividida.remove("variable")
-            print("Se ha creado una variable")
+            retorno = variable.crearVariable(instruccion, arrayIdentificadores)
+            print(retorno)
             break
         if palabra in ["funcion", "metodo"]:
-            palabraDividida.remove(palabra)
-            print("Se ha creado una funcion")
+            retorno = funcion.crearFuncion(instruccion, arrayIdentificadores)
             break
         if palabra in ["lista", "arreglo", "array"]:
-            palabraDividida.remove(palabra)
             print("Se ha creado una lista")
             break
         if palabra in ["for","para"]:
-            palabraDividida.remove(palabra)
             print("Se ha creado un for")
             break
         if palabra in ["while", "mientras"]:
-            palabraDividida.remove(palabra)
             print("Se ha creado un while")
             break
         if palabra in ["condicional", "if"]:
-            palabraDividida.remove(palabra)
             print("Se ha creado un if")
             break
         if palabra == "comentario":
-            palabraDividida.remove(palabra)
             print("Se ha creado un comentario")
             break
         if palabra in ["mensaje", "print", "imprimir"]:
-            palabraDividida.remove(palabra)
             print("Se ha creado un mensaje")
             break

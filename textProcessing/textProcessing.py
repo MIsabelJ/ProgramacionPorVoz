@@ -10,10 +10,9 @@ mover = Node("mover")
 insertar = Node("insertar")
 
 nodosPadre = [crear, llamar, eliminar, asignar, comentar, mover, insertar]
-arrayNombres = ["numero", "perro", "edad", "nombre", "cantidad", "llamada"]
+arrayIdentificadores = ["numero", "perro", "edad", "nombre", "cantidad", "llamada"]
 
-ejemplo = "crear una variable que contenga el valor 8"
+ejemplo = "crear una funcion cuyo nombre es maullar que reciba como parámetro un String "
 
 palabraDividida = ejemplo.split(" ")
-index.abrirNodo(palabraDividida, arrayNombres)
-
+index.abrirNodo(palabraDividida, arrayIdentificadores)

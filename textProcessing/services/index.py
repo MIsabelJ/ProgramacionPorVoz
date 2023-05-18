@@ -2,11 +2,11 @@ import services.assign.assignBranch as assignBranch
 import services.create.createBranch as createBranch
 
 
-def abrirNodo(palabraDividida, arrayNombres):
+def abrirNodo(palabraDividida, arrayIdentificadores):
     for palabra in palabraDividida:
         if palabra == "crear":
             palabraDividida.remove("crear")
-            createBranch.crear(palabraDividida)
+            createBranch.crear(palabraDividida, arrayIdentificadores)
             break
         if palabra == "llamar":
             palabraDividida.remove("llamar")
@@ -16,7 +16,7 @@ def abrirNodo(palabraDividida, arrayNombres):
             break
         if palabra == "asignar":
             palabraDividida.remove("asignar")
-            assignBranch.asignar(palabraDividida, arrayNombres)
+            assignBranch.asignar(palabraDividida, arrayIdentificadores)
             break
         if palabra == "comentar":
             palabraDividida.remove("comentar")

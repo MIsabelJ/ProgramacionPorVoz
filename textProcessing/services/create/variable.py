@@ -1,14 +1,9 @@
-#Para probar, ejecutar este archivo desde la consola con el 
-#comando: python assignBranch.py descomentando los ejemplos, el array 
-#de nombres y la llamada a la funcion asignar que están al final
-
-
-def asignar(instruccion, arrayIdentificadores):
+def crearVariable(instruccion, arrayIdentificadores):
     nombre = ""
     valor = ""
 
-    #Palabras claves que anteceden a la variable buscada
-    indicadoresNombre = ["nombre", "llamada", "variable", "a", "es"]
+    #Palabras claves que anteceden al nombre de la variable
+    indicadoresNombre = ["nombre", "llamada", "entera", "int", "string", "texto", "es", "sea"]
     indicadoresValor = [
         "valor",
         "número",
@@ -31,9 +26,10 @@ def asignar(instruccion, arrayIdentificadores):
     #Se encuentra el nombre de la variable
     nombre = filtrar(indicadoresNombre, instruccion)[0]
     if nombre in arrayIdentificadores:
-        print(nombre, " = ", valor)
+        print(f"La variable {nombre} ya existe")
     else:
-        print(f"La variable {nombre} no existe")
+        arrayIdentificadores.append(nombre)
+        return nombre + " = " + valor
 
 #filtra la instrucción para encontrar la palabra clave que antecede al valor esperado.
 #Devuelve una tupla con la palabra clave y su posición en la instrucción.
@@ -44,12 +40,5 @@ def filtrar(indicadores, instruccion):
                 return (instruccion[i], i)
             else:
                 return (instruccion[i+1], (i+1))
-    
-# arrayIdentificadores = ["numero", "perro", "edad", "nombre", "cantidad", "llamada"]
-# ejemplo = "asignar a la variable cuyo nombre es nombre el valor metodología de la investigación es piola"
-# ejemplo = "asignar a la variable numero el valor 8"
-# ejemplo = "asignar a la variable llamada nombre el valor 8"
-# ejemplo = "asignar a la variable cuyo nombre es numero el valor 8"
-# ejemplo = "asignar a numero el valor 8"
-# ejemplo = "asignar a la variable de nombre numero el valor 8"
-# asignar(ejemplo.split(" "), arrayIdentificadores)
+            
+#ejemplo = "crear una variable entera llamada gato que contenga el valor 8"
