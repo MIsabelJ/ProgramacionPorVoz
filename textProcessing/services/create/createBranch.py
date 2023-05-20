@@ -44,6 +44,9 @@ def crear(instruccion, arrayIdentificadores):
         if palabra == "comentario":
             print("Se ha creado un comentario")
             break
+        if palabra == "comentar":
+            print("Se ha comentado una línea")
+            break
         if palabra in ["mensaje", "print", "imprimir"]:
             print("Se ha creado un mensaje")
             break
