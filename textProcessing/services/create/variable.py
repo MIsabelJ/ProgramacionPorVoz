@@ -38,9 +38,11 @@ def filtrar(indicadores, instruccion):
         if instruccion[i] in indicadores:
             if i > 0 and instruccion[i-1] in indicadores and instruccion[i-2] in indicadores:
                 return (instruccion[i], i)
+            elif instruccion[i-1] in indicadores:
+                return (instruccion[i], i)
             else:
                 return (instruccion[i+1], (i+1))
 
-# ejemplo = "crear una variable entera llamada entera que contenga el valor 8"
-# valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
-# print(valor)
+ejemplo = "crear una variable cuyo nombre sea que contenga el valor 8"
+valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
+print(valor)
