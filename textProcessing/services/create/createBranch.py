@@ -1,5 +1,7 @@
 from . import variable as variable
 from . import funcion as funcion
+from . import lista as lista
+from . import bucleFor as bucleFor
 
 def crear(instruccion, arrayIdentificadores):
     indicadoresElementos = [
@@ -30,10 +32,11 @@ def crear(instruccion, arrayIdentificadores):
             retorno = funcion.crearFuncion(instruccion, arrayIdentificadores)
             break
         if palabra in ["lista", "arreglo", "array"]:
-            print("Se ha creado una lista")
+            retorno = lista.crearLista(instruccion, arrayIdentificadores)
             break
         if palabra in ["for","para"]:
-            print("Se ha creado un for")
+            retorno = bucleFor.crearBucleFor(instruccion, arrayIdentificadores)
+            print(retorno)
             break
         if palabra in ["while", "mientras"]:
             print("Se ha creado un while")

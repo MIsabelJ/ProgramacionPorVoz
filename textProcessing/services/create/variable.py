@@ -43,6 +43,6 @@ def filtrar(indicadores, instruccion):
             else:
                 return (instruccion[i+1], (i+1))
 
-ejemplo = "crear una variable cuyo nombre sea que contenga el valor 8"
-valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
-print(valor)
+# ejemplo = "crear una variable cuyo nombre sea que contenga el valor 8"
+# valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
+# print(valor)
