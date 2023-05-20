@@ -55,6 +55,6 @@ def filtrar(indicadores, instruccion):
             else:
                 return (instruccion[i+1], (i+1))
 
-ejemplo = "crear una lista llamada sea que contenga los valores 8 9 10 11 12 13 14 15 16 17 y 18"
-valor = crearLista(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
-print(valor)
+# ejemplo = "crear una lista llamada asdf que contenga los valores 8 9 10 11 12 13 14 15 16 17 y 18"
+# valor = crearLista(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
+# print(valor)
