@@ -21,7 +21,7 @@ def crearVariable(instruccion, arrayIdentificadores):
     for i in range(len(instruccion)):
         if i >= posicionValor:
             valor += instruccion[i] + " "
-            instruccion[i] = ""
+    del instruccion[posicionValor:]
 
     #Se encuentra el nombre de la variable
     nombre = filtrar(indicadoresNombre, instruccion)[0]
@@ -38,8 +38,15 @@ def filtrar(indicadores, instruccion):
         if instruccion[i] in indicadores:
             if i > 0 and instruccion[i-1] in indicadores and instruccion[i-2] in indicadores:
                 return (instruccion[i], i)
+<<<<<<< HEAD
 
+=======
+            elif instruccion[i-1] in indicadores:
+                return (instruccion[i], i)
+>>>>>>> 97a1b175233bc4922dddd85c0910074906d9e3c4
             else:
                 return (instruccion[i+1], (i+1))
-            
-#ejemplo = "crear una variable entera llamada gato que contenga el valor 8"
+
+# ejemplo = "crear una variable cuyo nombre sea que contenga el valor 8"
+# valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
+# print(valor)
