@@ -1,8 +1,10 @@
 from . import variable as variable
 from . import funcion as funcion
+from . import comentario as comentario
 
 def crear(instruccion, arrayIdentificadores):
     indicadoresElementos = [
+        "bucle",
         "variable",
         "funcion",
         "metodo",
@@ -43,6 +45,7 @@ def crear(instruccion, arrayIdentificadores):
             break
         if palabra == "comentario":
             print("Se ha creado un comentario")
+            retorno = comentario.recibirMensaje(instruccion)
             break
         if palabra in ["mensaje", "print", "imprimir"]:
             print("Se ha creado un mensaje")
