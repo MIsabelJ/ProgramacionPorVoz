@@ -1,11 +1,8 @@
 from . import variable as variable
 from . import funcion as funcion
-<<<<<<< HEAD
 from . import comentario as comentario
-=======
 from . import lista as lista
 from . import bucleFor as bucleFor
->>>>>>> 97a1b175233bc4922dddd85c0910074906d9e3c4
 
 def crear(instruccion, arrayIdentificadores):
     indicadoresElementos = [

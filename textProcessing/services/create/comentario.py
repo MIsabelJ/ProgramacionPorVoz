@@ -1,32 +1,22 @@
 #indicador comentario
 
 
-
+#Molde indicacion: Crear un comentario que [palabra clave]...
+#Molde indicacion: Crear un comentario de un mensaje que [palabra clave]...
 def recibirMensaje(instruccion):
-        indicadoresComentarios = ["diga","comentar","mensaje","ponga"]
+        indicadoresComentarios = ["diga","ponga","sea","exprese","comente"]
         comentario = ""
-        i = len(instruccion)
-        while i >= 0:
+        for i in reversed(range(len(instruccion))):
             if instruccion[i] in indicadoresComentarios:
-                if instruccion[i-1] == instruccion[i]:
-                    comentario = f"{comentario} {instruccion[i]}"
-                    instruccion.remove(instruccion[i+1])
-                    print("flag 1")
-                    if i < len(instruccion):
-                        print("flag 1.1")
-                        i = i+1
-                else:
-                    comentario = f"{comentario} {instruccion[i+1]}"
-                    instruccion.remove(instruccion[i+1])
-                    print("flag 2")
-                    if i < len(instruccion):
-                        print("flag 2.1")
-                        i = i+1
-            i = i-1
 
+                    indice = i+1
+                    break
+        
+        for i in range(indice, len(instruccion)):
+            comentario = f"{comentario} {instruccion[i]}"
         print(comentario)
         return comentario
 
 
 
-#ejemplo = "crear comentario que diga esta funcion es para crear
+#ejemplo = "crear un mensaje que diga esta funcion es para crear"
