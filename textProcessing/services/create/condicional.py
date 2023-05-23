@@ -32,8 +32,13 @@ def crearCondicional(instruccion):
         if condicion[i] == "igual" or condicion[i] == "iguales":
             condicion[i] = "=="
 
+    sentenciaFinal =""
     for i in range(len(condicion)):
         if condicion[i] == "<" or condicion[i] == ">" or condicion[i] == "==":
             condicion[i], condicion[1] = condicion[1], condicion[i]
     
-    return condicion
+    for i in range(len(condicion)):
+        sentenciaFinal = f"{sentenciaFinal} {condicion[i]}"
+    
+    sentenciaFinal = f"if {sentenciaFinal}:"
+    return sentenciaFinal

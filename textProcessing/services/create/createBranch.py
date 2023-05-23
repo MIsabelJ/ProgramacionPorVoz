@@ -46,6 +46,7 @@ def crear(instruccion, arrayIdentificadores):
         if palabra in ["condicional", "if"]:
             retorno = condicional.crearCondicional(instruccion)
             print("Se ha creado un if")
+            print(retorno)
             break
         if palabra == "comentario":
             print("Se ha creado un comentario")
