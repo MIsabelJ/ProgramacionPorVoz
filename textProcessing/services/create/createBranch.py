@@ -3,7 +3,7 @@ from . import funcion as funcion
 from . import comentario as comentario
 from . import lista as lista
 from . import bucleFor as bucleFor
-
+from . import condicional as condicional
 def crear(instruccion, arrayIdentificadores):
     indicadoresElementos = [
         "bucle",
@@ -44,6 +44,7 @@ def crear(instruccion, arrayIdentificadores):
             print("Se ha creado un while")
             break
         if palabra in ["condicional", "if"]:
+            retorno = condicional.crearCondicional(instruccion)
             print("Se ha creado un if")
             break
         if palabra == "comentario":
