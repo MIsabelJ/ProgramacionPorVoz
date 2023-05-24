@@ -32,7 +32,7 @@ sudo apt install python-pip
 ### Instalación de librerías a utilizar
 -pip install SpeechRecognition
 -pip install PyAudio (previamente debemos instalar la dependencia portaudio-devel con el comando: sudo apt-get install portaudio19-dev
--pip install PyQt7
+-pip install PyQt5
 -sudo apt install libxcb-xinerama0	
 	
 ### Clonación del repositorio
