@@ -51,6 +51,7 @@ def crear(instruccion, arrayIdentificadores):
         if palabra == "comentario":
             print("Se ha creado un comentario")
             retorno = comentario.recibirMensaje(instruccion)
+            print(retorno)
             break
         if palabra == "comentar":
             print("Se ha comentado una línea")

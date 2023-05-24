@@ -14,7 +14,7 @@ def recibirMensaje(instruccion):
         
         for i in range(indice, len(instruccion)):
             comentario = f"{comentario} {instruccion[i]}"
-        print(comentario)
+        comentario = f"# {comentario}"
         return comentario
 
 
