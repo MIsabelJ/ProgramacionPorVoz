@@ -35,9 +35,9 @@ sudo apt install python-pip
 -pip install PyQt7
 	
 ### Clonación del repositorio
--cd <ruta en la que se creará el repositorio local>
+-cd "ruta en la que se creará el repositorio local"
 -git clone https://github.com/MIsabelJ/ProgramacionPorVoz.git
   
 ### Ejecución del programa
--cd <ruta donde se encuentra el archivo a ejecutar>
--python <archivo main a ejecutar>
+-cd "ruta donde se encuentra el archivo a ejecutar"
+-python "archivo main a ejecutar"
