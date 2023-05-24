@@ -1,5 +1,4 @@
-from asyncio.windows_events import NULL
-from sre_constants import RANGE
+
 
 
 def crearCondicional(instruccion):
@@ -11,11 +10,11 @@ def crearCondicional(instruccion):
         if instruccion[i] in identificadores:
             indice = i+1
             break
-        indice = NULL
+        indice = None
 
     # Verificamos si se encontro la palabra clave y se lo asignamos al arrayCondicion
-    if indice == NULL:
-        print("Error, no se encuentra indice")
+    if indice == None:
+        return "Error, no se encuentra indice"
     else:
         for i in range(indice, len(instruccion) ):
             condicion.append(instruccion[i])
