@@ -12,14 +12,31 @@ Esta aplicación resulta sumamente útil al crear programas en Python, ya que ag
 
 A continuación, se proporcionarán instrucciones para instalar el programa en una máquina virtual de Linux desde la consola. Estas instrucciones abarcarán los siguientes pasos: Instalación de Python, instalación de Git, instalación de pip, instalación de librerías que utiliza el proyecto, clonación del repositorio del proyecto a una carpeta local, y finalmente la ejecución de la aplicación.
 
-### Instalación de Python
+### Instalación de Python desde la terminal de Linux
+En ubuntu y Debian:
+	-sudo apt update (Actualiza los paquetes del sistema)
+	-sudo apt install python (Instala python3)
+En CentOS y Fedora:
+	-sudo <dnf o yum> uptate (Actualiza los paquetes del sistema)
+	-sudo <dnf o yum> install python (Instala python3)
 
-### Instalación de Git
-
-### Instalación de pip
-
+### Instalación de Git desde la terminal de Linux:
+En ubuntu o Debian:
+	-sudo apt install git
+En CentOS y Fedora:
+	-sudo <dnf o yum> install git
+  
+### Instalación de pip desde la terminal de Linux:
+sudo apt install python-pip
+  
 ### Instalación de librerías a utilizar
+-pip install SpeechRecognition
+-pip install PyAudio (previamente debemos instalar la dependencia portaudio-devel con el comando: sudo apt-get install portaudio19-dev
 
 ### Clonación del repositorio
-
+-cd <ruta en la que se creará el repositorio local>
+-git clone https://github.com/MIsabelJ/ProgramacionPorVoz.git
+  
 ### Ejecución del programa
+-cd <ruta donde se encuentra el archivo a ejecutar>
+-python <archivo main a ejecutar>
