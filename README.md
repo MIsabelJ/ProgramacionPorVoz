@@ -32,7 +32,8 @@ sudo apt install python-pip
 ### Instalación de librerías a utilizar
 -pip install SpeechRecognition
 -pip install PyAudio (previamente debemos instalar la dependencia portaudio-devel con el comando: sudo apt-get install portaudio19-dev
-
+-pip install PyQt7
+	
 ### Clonación del repositorio
 -cd <ruta en la que se creará el repositorio local>
 -git clone https://github.com/MIsabelJ/ProgramacionPorVoz.git
