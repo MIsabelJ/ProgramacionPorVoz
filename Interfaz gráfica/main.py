@@ -5,10 +5,11 @@ qtCreatorFile = "programacionPorVozDiseño.ui"
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
-
+direccionArchivo = ""
+textoReconocido =""
+textoProcesado =""
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
-    
 
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -16,10 +17,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         self.stackedWidget.setCurrentWidget(self.page)
-        self.direccionArchivo = ""
-        self.textoReconocido = ""
-        self.textoProcesado = ""
-
         ## PAGINAS
         # Pagina 1
         paginaUno = self.stackedWidget.widget(0)
@@ -29,12 +26,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         def archivoSeleccionado():
             if inputArchivo.text() != "":
                 self.stackedWidget.setCurrentWidget(self.page_2)
-                self.setDireccionArchivo(inputArchivo.text())
-                print(self.getDireccionArchivo())
+                setDireccionArchivo(inputArchivo.text())
 
         if botonSeleccionar:
             botonSeleccionar.clicked.connect(archivoSeleccionado)
-        
+            print(getDireccionArchivo())
+            
         # Pagina 2
         paginaDos = self.stackedWidget.widget(1)
         botonGrabar = paginaDos.findChild(QtWidgets.QPushButton, "botonGrabar")
@@ -54,13 +51,14 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         def parar():
             #detener la grabación dentro de este lugar
-            self.setTextoProcesado("hola Mundo") #asignarle el valor del texto reconocido
+            # self.setTextoProcesado("hola Mundo") #asignarle el valor del texto reconocido
             #acá enviamos el texto reconocido al Gabi y al Agus para que lo procesen
-            self.setTextoReconocido("Hola mundo")
+            # self.setTextoReconocido("Hola mundo")
             self.stackedWidget.setCurrentWidget(self.page_4)
         
         if botonParar:
             botonParar.clicked.connect(parar)
+            # print(self.getTextoProcesado())
 
         # Pagina 4
         paginaCuatro = self.stackedWidget.widget(3)
@@ -69,9 +67,9 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         botonAceptar = paginaCuatro.findChild(QtWidgets.QPushButton, "botonAceptar")
         botonReintentar = paginaCuatro.findChild(QtWidgets.QPushButton, "botonReintentar")
 
-        print(self.textoReconocido, self.textoProcesado)
-        inputMostrar.setText(self.getTextoReconocido())
-        inputVistaPrevia.setText(self.getTextoProcesado())
+        # print(self.getTextoReconocido(), self.getTextoProcesado())
+        # inputMostrar.setText(self.getTextoReconocido())
+        # inputVistaPrevia.setText(self.getTextoProcesado())
 
         def aceptar():
             #Enviar dirección del archivo y texto reconocido al Franco para que lo inserte
@@ -86,26 +84,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         if botonReintentar:
             botonReintentar.clicked.connect(reintentar)
     
-    def setDireccionArchivo(self, direccion):
-        self.direccionArchivo = direccion
+def getDireccionArchivo():
+    global direccionArchivo
+    return direccionArchivo
 
-    def setTextoReconocido(self, texto):
-        self.textoReconocido = texto
-    
-    def setTextoProcesado(self, texto):
-        self.textoProcesado = texto
-
-    def getDireccionArchivo(self):
-        return self.direccionArchivo
-    
-    def getTextoReconocido(self):
-        return self.textoReconocido
-    
-    def getTextoProcesado(self):
-        return self.textoProcesado
-    
-        
-            
+def setDireccionArchivo(texto):
+    global direccionArchivo 
+    direccionArchivo = texto
 
 if __name__ == "__main__":
     app =  QtWidgets.QApplication(sys.argv)
