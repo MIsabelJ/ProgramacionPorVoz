@@ -1,7 +1,6 @@
 import speech_recognition as sr
 import pyaudio
 
-
 def grabarAudio():
     # Configuración del reconocimiento de voz y micrófono
     r = sr.Recognizer()
@@ -19,13 +18,14 @@ def grabarAudio():
     # Transformación del audio a texto
     try:
         texto = r.recognize_google(audio, language="es-ES")
-        print("Dijiste: {}".format(texto))
+        print("Dijiste {}".format(texto))
         # Solicitar confirmación al usuario
-        confirm = input("¿Es correcto? (s/n): ")
+        confirm = input("¿Es esto correcto? (s/n): ")
         if confirm.lower() == "s":
             # Desestructuro el texto en palabras y las guardo en una lista
-            listaPalabras = texto.split()
-            return listaPalabras
+            words_list = texto.split()
+            print("Palabras: {}".format(words_list))
+
         else:
             print("Texto descartado.")
     except sr.UnknownValueError:
