@@ -55,6 +55,7 @@ def filtrar(indicadores, instruccion):
             else:
                 return (instruccion[i+1], (i+1))
 
-# ejemplo = "crear una funcion cuyo nombre es sea que reciba como parámetros a b c e indice"
-# valor = crearFuncion(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
-# print(valor)
+ejemplo = "crear una funcion cuyo nombre es sea que reciba como parámetros a b c e indice"
+valor = crearFuncion(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
+print(valor)
+ 

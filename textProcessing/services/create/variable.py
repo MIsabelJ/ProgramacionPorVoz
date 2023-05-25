@@ -13,6 +13,7 @@ def crearVariable(instruccion, arrayIdentificadores):
         "instrucción",
         "instrucciones",
         "entero",
+        "sea"
     ]
 
     #Se encuentra el valor a asignar y se eliminan esas palabras de la instrucción
@@ -43,6 +44,6 @@ def filtrar(indicadores, instruccion):
             else:
                 return (instruccion[i+1], (i+1))
 
-# ejemplo = "crear una variable cuyo nombre sea que contenga el valor 8"
+ejemplo = "crear una variable cuyo nombre sea texto y que contenga la cadena hola mundo, esto es texto"
 # valor = crearVariable(ejemplo.split(" "), ["numero", "perro", "edad", "nombre", "cantidad", "llamada"])
 # print(valor)
