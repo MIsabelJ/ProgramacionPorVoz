@@ -22,7 +22,7 @@ def crearBucleFor(instruccion, arrayIdentificadores):
     posicionLista = filtrar(indicadoresLista, instruccion)[1]
     for i in range(len(instruccion)):
         if i >= posicionLista and i < len(instruccion):
-                lista.append(instruccion[i])
+            lista.append(instruccion[i])
     del instruccion[posicionLista:]
 
 
