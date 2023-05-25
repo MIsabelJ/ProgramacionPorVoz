@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\textProcessing",
-    "\\textProcessing\\services",
-    "\\textProcessing\\services\\assign",
-    "\\textProcessing\\services\\create"
+    "\\Interfaz gráfica",
+    "\\textProcessing"
   ],
+  "SelectedNode": "\\Interfaz gráfica\\main.py",
   "PreviewInSolutionExplorer": false
 }

@@ -51,6 +51,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         #iniciar función de reconocimiento de voz acá y guardarla en una variable
 
+
         def parar():
             #detener la grabación dentro de este lugar
             self.setTextoProcesado("hola Mundo") #asignarle el valor del texto reconocido
