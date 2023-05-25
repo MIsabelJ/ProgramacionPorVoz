@@ -236,6 +236,7 @@ class Ui_MainWindow(object):
 "border: 2px solid #6D6D6D")
         self.inputArchivo.setText("")
         self.inputArchivo.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.inputArchivo.setReadOnly(False)
         self.inputArchivo.setObjectName("inputArchivo")
         self.label_2 = QtWidgets.QLabel(self.page)
         self.label_2.setGeometry(QtCore.QRect(50, 80, 381, 71))
@@ -294,11 +295,17 @@ class Ui_MainWindow(object):
 "background-color: #F2F2F2;\n"
 "padding: 7px")
         self.inputVacio.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputVacio.setReadOnly(True)
         self.inputVacio.setObjectName("inputVacio")
         self.botonGrabar = QtWidgets.QPushButton(self.page_2)
         self.botonGrabar.setGeometry(QtCore.QRect(200, 328, 79, 79))
         self.botonGrabar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.botonGrabar.setStyleSheet("")
+        self.botonGrabar.setStyleSheet("QPushButton:hover {\n"
+"        border: none; \n"
+"}\n"
+"QPushButton {\n"
+"    border: none;\n"
+"}")
         self.botonGrabar.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/micrófono.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -310,7 +317,13 @@ class Ui_MainWindow(object):
         self.page_3.setObjectName("page_3")
         self.botonParar = QtWidgets.QPushButton(self.page_3)
         self.botonParar.setGeometry(QtCore.QRect(200, 328, 79, 79))
-        self.botonParar.setStyleSheet("")
+        self.botonParar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.botonParar.setStyleSheet("QPushButton:hover {\n"
+"        border: none; \n"
+"}\n"
+"QPushButton {\n"
+"    border: none;\n"
+"}")
         self.botonParar.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/newPrefix/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -342,6 +355,7 @@ class Ui_MainWindow(object):
 "padding: 7px")
         self.inputMostrar_2.setText("")
         self.inputMostrar_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputMostrar_2.setReadOnly(True)
         self.inputMostrar_2.setObjectName("inputMostrar_2")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
@@ -368,6 +382,7 @@ class Ui_MainWindow(object):
 "background-color: #F2F2F2;\n"
 "padding: 7px")
         self.inputMostrar.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputMostrar.setReadOnly(True)
         self.inputMostrar.setObjectName("inputMostrar")
         self.label_8 = QtWidgets.QLabel(self.page_4)
         self.label_8.setGeometry(QtCore.QRect(57, 180, 201, 31))
@@ -424,10 +439,12 @@ class Ui_MainWindow(object):
 "background-color: #000000;\n"
 "padding: 7px")
         self.inputVistaPrevia.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputVistaPrevia.setReadOnly(True)
         self.inputVistaPrevia.setPlaceholderText("")
         self.inputVistaPrevia.setObjectName("inputVistaPrevia")
         self.botonAceptar = QtWidgets.QPushButton(self.page_4)
         self.botonAceptar.setGeometry(QtCore.QRect(57, 340, 127, 39))
+        self.botonAceptar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.botonAceptar.setStyleSheet("border-radius: 12px;\n"
 "background-color: #2BD93D;\n"
 "color: #fff;\n"
@@ -436,6 +453,7 @@ class Ui_MainWindow(object):
         self.botonAceptar.setObjectName("botonAceptar")
         self.botonReintentar = QtWidgets.QPushButton(self.page_4)
         self.botonReintentar.setGeometry(QtCore.QRect(196, 340, 127, 39))
+        self.botonReintentar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.botonReintentar.setStyleSheet("border-radius: 12px;\n"
 "background-color: #ED4612;\n"
 "color: #fff;\n"
@@ -449,7 +467,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
