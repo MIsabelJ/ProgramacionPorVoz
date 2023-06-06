@@ -40,5 +40,6 @@ sudo apt install python-pip
 -git clone https://github.com/MIsabelJ/ProgramacionPorVoz.git
 
 ### Ejecución del programa
--cd "ruta donde se encuentra el archivo a ejecutar"
--python "archivo main a ejecutar"
+-cd "ruta Interfaz gráfica"
+-python -m main.py
+
