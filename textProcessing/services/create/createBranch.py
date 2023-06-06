@@ -4,6 +4,7 @@ from . import comentario as comentario
 from . import lista as lista
 from . import bucleFor as bucleFor
 from . import condicional as condicional
+from . import bucleWhile as bucleWhile
 def crear(instruccion, arrayIdentificadores):
     indicadoresElementos = [
         "bucle",
@@ -42,6 +43,7 @@ def crear(instruccion, arrayIdentificadores):
             break
         if palabra in ["while", "mientras"]:
             print("Se ha creado un while")
+            retorno = bucleWhile.crearBucleWhile(instruccion)
             break
         if palabra in ["condicional", "if"]:
             retorno = condicional.crearCondicional(instruccion)
