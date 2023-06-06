@@ -41,5 +41,6 @@ sudo apt install python-pip
 
 ### Ejecución del programa
 -cd "ruta Interfaz gráfica"
+
 -python -m main.py
 
