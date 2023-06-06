@@ -236,6 +236,7 @@ class Ui_MainWindow(object):
 "border: 2px solid #6D6D6D")
         self.inputArchivo.setText("")
         self.inputArchivo.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.inputArchivo.setReadOnly(False)
         self.inputArchivo.setObjectName("inputArchivo")
         self.label_2 = QtWidgets.QLabel(self.page)
         self.label_2.setGeometry(QtCore.QRect(50, 80, 381, 71))
@@ -294,11 +295,17 @@ class Ui_MainWindow(object):
 "background-color: #F2F2F2;\n"
 "padding: 7px")
         self.inputVacio.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputVacio.setReadOnly(True)
         self.inputVacio.setObjectName("inputVacio")
         self.botonGrabar = QtWidgets.QPushButton(self.page_2)
         self.botonGrabar.setGeometry(QtCore.QRect(200, 328, 79, 79))
         self.botonGrabar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.botonGrabar.setStyleSheet("")
+        self.botonGrabar.setStyleSheet("QPushButton:hover {\n"
+"        border: none; \n"
+"}\n"
+"QPushButton {\n"
+"    border: none;\n"
+"}")
         self.botonGrabar.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/micrófono.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -310,7 +317,13 @@ class Ui_MainWindow(object):
         self.page_3.setObjectName("page_3")
         self.botonParar = QtWidgets.QPushButton(self.page_3)
         self.botonParar.setGeometry(QtCore.QRect(200, 328, 79, 79))
-        self.botonParar.setStyleSheet("")
+        self.botonParar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.botonParar.setStyleSheet("QPushButton:hover {\n"
+"        border: none; \n"
+"}\n"
+"QPushButton {\n"
+"    border: none;\n"
+"}")
         self.botonParar.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/newPrefix/stop.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -329,20 +342,21 @@ class Ui_MainWindow(object):
         self.label_6.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_6.setWordWrap(True)
         self.label_6.setObjectName("label_6")
-        self.inputMostrar_2 = QtWidgets.QLineEdit(self.page_3)
-        self.inputMostrar_2.setEnabled(True)
-        self.inputMostrar_2.setGeometry(QtCore.QRect(57, 170, 366, 78))
+        self.inputMostrar_1 = QtWidgets.QLineEdit(self.page_3)
+        self.inputMostrar_1.setEnabled(True)
+        self.inputMostrar_1.setGeometry(QtCore.QRect(57, 170, 366, 78))
         font = QtGui.QFont()
         font.setFamily("Montserrat Light")
         font.setPointSize(14)
-        self.inputMostrar_2.setFont(font)
-        self.inputMostrar_2.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
-        self.inputMostrar_2.setStyleSheet("border-radius: 12px;\n"
+        self.inputMostrar_1.setFont(font)
+        self.inputMostrar_1.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
+        self.inputMostrar_1.setStyleSheet("border-radius: 12px;\n"
 "background-color: #F2F2F2;\n"
 "padding: 7px")
-        self.inputMostrar_2.setText("")
-        self.inputMostrar_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.inputMostrar_2.setObjectName("inputMostrar_2")
+        self.inputMostrar_1.setText("")
+        self.inputMostrar_1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputMostrar_1.setReadOnly(True)
+        self.inputMostrar_1.setObjectName("inputMostrar_1")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -358,17 +372,18 @@ class Ui_MainWindow(object):
         self.label_7.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_7.setWordWrap(True)
         self.label_7.setObjectName("label_7")
-        self.inputMostrar = QtWidgets.QLineEdit(self.page_4)
-        self.inputMostrar.setGeometry(QtCore.QRect(57, 90, 366, 69))
+        self.inputMostrarFinal = QtWidgets.QLineEdit(self.page_4)
+        self.inputMostrarFinal.setGeometry(QtCore.QRect(57, 90, 366, 69))
         font = QtGui.QFont()
         font.setFamily("Montserrat Light")
         font.setPointSize(14)
-        self.inputMostrar.setFont(font)
-        self.inputMostrar.setStyleSheet("border-radius: 12px;\n"
+        self.inputMostrarFinal.setFont(font)
+        self.inputMostrarFinal.setStyleSheet("border-radius: 12px;\n"
 "background-color: #F2F2F2;\n"
 "padding: 7px")
-        self.inputMostrar.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.inputMostrar.setObjectName("inputMostrar")
+        self.inputMostrarFinal.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputMostrarFinal.setReadOnly(True)
+        self.inputMostrarFinal.setObjectName("inputMostrarFinal")
         self.label_8 = QtWidgets.QLabel(self.page_4)
         self.label_8.setGeometry(QtCore.QRect(57, 180, 201, 31))
         font = QtGui.QFont()
@@ -424,10 +439,12 @@ class Ui_MainWindow(object):
 "background-color: #000000;\n"
 "padding: 7px")
         self.inputVistaPrevia.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.inputVistaPrevia.setReadOnly(True)
         self.inputVistaPrevia.setPlaceholderText("")
         self.inputVistaPrevia.setObjectName("inputVistaPrevia")
         self.botonAceptar = QtWidgets.QPushButton(self.page_4)
         self.botonAceptar.setGeometry(QtCore.QRect(57, 340, 127, 39))
+        self.botonAceptar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.botonAceptar.setStyleSheet("border-radius: 12px;\n"
 "background-color: #2BD93D;\n"
 "color: #fff;\n"
@@ -436,6 +453,7 @@ class Ui_MainWindow(object):
         self.botonAceptar.setObjectName("botonAceptar")
         self.botonReintentar = QtWidgets.QPushButton(self.page_4)
         self.botonReintentar.setGeometry(QtCore.QRect(196, 340, 127, 39))
+        self.botonReintentar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.botonReintentar.setStyleSheet("border-radius: 12px;\n"
 "background-color: #ED4612;\n"
 "color: #fff;\n"
@@ -449,7 +467,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -462,12 +480,22 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Presiona el micrófono para grabar"))
         self.inputVacio.setPlaceholderText(_translate("MainWindow", "Muestra de la instrucción"))
         self.label_6.setText(_translate("MainWindow", "Escuchando..."))
-        self.inputMostrar_2.setPlaceholderText(_translate("MainWindow", "Muestra de la instrucción"))
+        self.inputMostrar_1.setPlaceholderText(_translate("MainWindow", "Muestra de la instrucción"))
         self.label_7.setText(_translate("MainWindow", "Confirmar instrucción"))
-        self.inputMostrar.setPlaceholderText(_translate("MainWindow", "Muestra de la instrucción"))
+        self.inputMostrarFinal.setPlaceholderText(_translate("MainWindow", "Muestra de la instrucción"))
         self.label_8.setText(_translate("MainWindow", "Vista previa"))
         self.inputVistaPrevia.setText(_translate("MainWindow", "def sumatoria(a, b):"))
         self.botonAceptar.setText(_translate("MainWindow", "Aceptar"))
         self.botonReintentar.setText(_translate("MainWindow", "Reintentar"))
 import microfono_rc
 import stop_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

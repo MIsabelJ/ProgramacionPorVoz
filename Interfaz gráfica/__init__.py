@@ -1,0 +1,1 @@
+from interfaz.main import startApp

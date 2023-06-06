@@ -520,7 +520,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="botonSeleccionar">
@@ -642,6 +642,9 @@ border: 2px solid #6D6D6D</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
       </property>
       <property name="placeholderText">
        <string> Dirección del archivo</string>
@@ -796,6 +799,9 @@ padding: 7px</string>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
       <property name="placeholderText">
        <string>Muestra de la instrucción</string>
       </property>
@@ -813,7 +819,12 @@ padding: 7px</string>
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QPushButton:hover {
+        border: none; 
+}
+QPushButton {
+	border: none;
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -840,8 +851,16 @@ padding: 7px</string>
         <height>79</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QPushButton:hover {
+        border: none; 
+}
+QPushButton {
+	border: none;
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -887,7 +906,7 @@ padding: 7px</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="inputMostrar_2">
+     <widget class="QLineEdit" name="inputMostrar_1">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -918,6 +937,9 @@ padding: 7px</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Muestra de la instrucción</string>
@@ -955,7 +977,7 @@ padding: 7px</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="inputMostrar">
+     <widget class="QLineEdit" name="inputMostrarFinal">
       <property name="geometry">
        <rect>
         <x>57</x>
@@ -977,6 +999,9 @@ padding: 7px</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Muestra de la instrucción</string>
@@ -1145,6 +1170,9 @@ padding: 7px</string>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
       <property name="placeholderText">
        <string/>
       </property>
@@ -1157,6 +1185,9 @@ padding: 7px</string>
         <width>127</width>
         <height>39</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">border-radius: 12px;
@@ -1177,6 +1208,9 @@ font-size: 16px;</string>
         <width>127</width>
         <height>39</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">border-radius: 12px;
