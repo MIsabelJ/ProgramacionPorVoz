@@ -1,10 +1,13 @@
 
 from PyQt5 import QtWidgets, uic, QtCore
+
 import threading
 import sys
 sys.path.append("..")
+from textProcessing.processing.prompt import traducir
 from reconocimientoVoz.reconocimientoAudio import Grabador
 grabador = Grabador()
+resultado = ""
 
 qtCreatorFile=""
 def startApp(ui_file):
@@ -86,6 +89,8 @@ def startApp(ui_file):
         def parar(self, inputMostrarFinal, inputVistaPrevia):
             grabador.detener_procesamiento()
             grabador.detener_grabacion()
+            self.textoProcesado = traducir(grabador.texto)
+            #self.textoReconocido
             # acá enviamos el texto reconocido al Gabi y al Agus para que lo procesen
             # self.textoReconocido = "Hola mundo 33"
             self.timer.stop()
@@ -96,8 +101,8 @@ def startApp(ui_file):
         # Página 4
         def aceptar(self, inputMostrarFinal, inputVistaPrevia):
             # Enviar dirección del archivo y texto reconocido al Franco para que lo inserte
-            inputMostrarFinal.setText("")
-            inputVistaPrevia.setText("")
+            inputMostrarFinal.setText(grabador.texto)
+            inputVistaPrevia.setText(resultado)
             print(self.direccionArchivo)
 
         def reintentar(self, inputMostrar):
