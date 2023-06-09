@@ -112,6 +112,7 @@ def startApp(ui_file):
             self.grabador = Grabador()
             self.stackedWidget.setCurrentWidget(self.page_2)
 
+
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
