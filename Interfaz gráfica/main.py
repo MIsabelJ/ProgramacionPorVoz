@@ -90,7 +90,7 @@ def startApp(ui_file):
         def parar(self, inputMostrarFinal, inputVistaPrevia):
             grabador.detener_procesamiento()
             grabador.detener_grabacion()
-            self.textoProcesado = traducir(grabador.texto)
+            self.textoProcesado = traducir(self.direccionArchivo ,grabador.texto)
             #self.textoReconocido
             # acá enviamos el texto reconocido al Gabi y al Agus para que lo procesen
             # self.textoReconocido = "Hola mundo 33"
@@ -104,7 +104,7 @@ def startApp(ui_file):
             # Enviar dirección del archivo y texto reconocido al Franco para que lo inserte
             inputMostrarFinal.setText(grabador.texto)
             inputVistaPrevia.setText(resultado)
-            escribir(self.direccionArchivo)
+            escribir(self.direccionArchivo, self.textoProcesado)
             print(self.direccionArchivo)
 
         def reintentar(self, inputMostrar):
