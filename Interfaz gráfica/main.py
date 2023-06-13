@@ -5,6 +5,7 @@ import threading
 import sys
 sys.path.append("..")
 from textProcessing.processing.prompt import traducir
+from textProcessing.processing.prompt import escribir
 from reconocimientoVoz.reconocimientoAudio import Grabador
 grabador = Grabador()
 resultado = ""
@@ -103,13 +104,14 @@ def startApp(ui_file):
             # Enviar dirección del archivo y texto reconocido al Franco para que lo inserte
             inputMostrarFinal.setText(grabador.texto)
             inputVistaPrevia.setText(resultado)
+            escribir(self.direccionArchivo)
             print(self.direccionArchivo)
 
         def reintentar(self, inputMostrar):
             self.textoReconocido = ""
             self.textoProcesado = ""
             inputMostrar.setText("")
-            self.grabador = Grabador()
+            grabador.__init__()
             self.stackedWidget.setCurrentWidget(self.page_2)
 
 

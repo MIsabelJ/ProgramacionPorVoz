@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Interfaz gráfica",
+    "\\lectura-modificacion",
     "\\textProcessing",
     "\\textProcessing\\processing"
   ],
-  "SelectedNode": "\\Interfaz gráfica\\main.py",
+  "SelectedNode": "\\textProcessing\\processing\\prompt.py",
   "PreviewInSolutionExplorer": false
 }

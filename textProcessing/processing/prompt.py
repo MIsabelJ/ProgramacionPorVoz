@@ -1,9 +1,8 @@
 
 import openai
 
-def traducir(instruccion):
-    openai.api_key = "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"
-    ruta = "../lectura-modificacion/archivo.py"
+def traducir(ruta, instruccion):
+    openai.api_key = "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"
     with open (ruta, 'r') as f:
         doc = f.read()
 
@@ -24,9 +23,9 @@ def traducir(instruccion):
     for choice in completion.choices:
         print(f"Response {choice.text}")
 
-    if choice.text == "Error, no es relacionado con codigo.":
-        return choice.text
-    else:
-        with open(ruta, 'w') as w:
-            w.write(choice.text)
     return choice.text
+
+def escribir(ruta, instruccion):
+    with open(ruta, 'w') as w:
+         w.write(traducir (ruta, instruccion))
+
