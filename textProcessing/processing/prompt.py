@@ -8,12 +8,12 @@ def traducir(ruta, instruccion):
     with open (ruta, 'r') as f:
         doc = f.read()
 
-    model_engine = "text-davinci-002"
+    model_engine = "text-davinci-003"
     prompt = f'''
     A lo siguiente: {doc}
     Modificalo segun la siguiente instruccion: {instruccion}.
-    Debe ser en leanguaje tipo python y si la instruccion es algo no relacionado a coduigo de python dame como respuesta "print("Error")"
-    No se deben agregar lineas ni comillas que no sean codigo a la respuesta.
+    Debe ser en lenguaje tipo python y si la instruccion es algo no relacionado a codigo de python dame como respuesta "print("Error")"
+    No se deben agregar lineas ni comillas, que no sean codigo, a la respuesta.
     '''
     completion = openai.Completion.create(engine=model_engine,
                                           prompt=prompt,
@@ -31,5 +31,5 @@ def traducir(ruta, instruccion):
 
 def escribir(ruta, instruccion):
     with open(ruta, 'w') as w:
-         w.write(traducir (ruta, instruccion))
+         w.write(instruccion)
 
