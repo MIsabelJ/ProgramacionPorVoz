@@ -2,7 +2,8 @@
 import openai
 
 def traducir(ruta, instruccion):
-    openai.api_key = "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"
+
+    openai.api_key = ""
     doc = ""
     with open (ruta, 'r') as f:
         doc = f.read()
