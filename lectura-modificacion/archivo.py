@@ -1,6 +1,4 @@
 
-def imprimir_mensaje():
-    print("Hola Mundo")
     
-def imprimir_mensaje():
-    print("Hola Mundo")
+print("Hola, ¿Cómo están todos?")
+print("chao a todos")

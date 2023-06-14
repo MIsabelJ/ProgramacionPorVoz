@@ -2,16 +2,17 @@
 import openai
 
 def traducir(ruta, instruccion):
-    openai.api_key = "Colocar Key de openai aqui"
+    openai.api_key = ""
+    doc = ""
     with open (ruta, 'r') as f:
         doc = f.read()
 
     model_engine = "text-davinci-002"
-    prompt = f'''Funcionas para traducir lenguaje natural a codigo de python.
-    No tabulas lineas de codigo ya existentes y siempre que creas una linea nueva dejas un renglon libre abajo de dicha linea.
-    Si lo siguiente no es algo relacionado con codigo dame como respuesta un mensaje que diga "Error, no es relacionado con codigo".
-    El archivo que necesito modificar es el siguiente: {doc}. 
-    Necesito que contenga el contenido ya existente en el archivo mas lo indicado en la siguiente instruccion: {instruccion}
+    prompt = f'''
+    A lo siguiente: {doc}
+    Modificalo segun la siguiente instruccion: {instruccion}.
+    Debe ser en leanguaje tipo python y si la instruccion es algo no relacionado a coduigo de python dame como respuesta "print("Error")"
+    No se deben agregar lineas ni comillas que no sean codigo a la respuesta.
     '''
     completion = openai.Completion.create(engine=model_engine,
                                           prompt=prompt,
@@ -20,10 +21,12 @@ def traducir(ruta, instruccion):
                                           stop=None,
                                           temperature=0.7)
 
-    for choice in completion.choices:
-        print(f"Response {choice.text}")
+    #for choice in completion.choices:
+    #    print(f"{choice.text}")
+    
+    print (completion.choices[0].text)
 
-    return choice.text
+    return completion.choices[0].text
 
 def escribir(ruta, instruccion):
     with open(ruta, 'w') as w:
