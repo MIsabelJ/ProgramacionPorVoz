@@ -1,12 +1,14 @@
 # Programacion por Voz
 
-"Programación por Voz" es una aplicación que permite escribir código Python mediante comandos de voz. Al activar el micrófono, el programa comienza a escuchar las instrucciones del usuario. Posteriormente, traduce dinámicamente estas instrucciones en sintaxis de Python, utilizando palabras clave que se han definido en orden jerárquico.
+"Programación por Voz" es una aplicación que permite escribir código Python mediante comandos de voz. Al activar el micrófono, el programa comienza a escuchar las instrucciones del usuario. Finalmente, estas instrucciones son recibidas por una extensión de una inteligencia artificial, traduciendolas a líneas de código aptas para Python. 
 
 ## Detalles y características principales
 
-Al ejecutar el programa, se solicita al usuario que proporcione las instrucciones del código deseado a través de una grabación de voz. Luego, el programa procesa las palabras mencionadas por el usuario y las compara con grupos de palabras clave definidos por los programadores. Los grupos principales de palabras clave incluyen: crear, llamar, eliminar, asignar, comentar, mover e insertar. Estos grupos contienen palabras adicionales como bucle, comentario, condicional, función, lista y variable.
-Una vez que se encuentran coincidencias entre las palabras del usuario y los grupos de palabras clave, la información se envía a una aplicación encargada de traducirla a comandos en lenguaje Python. El programa crea entonces un archivo ".py" que contiene las instrucciones del usuario traducidas a código, listo para ser ejecutado.
-Esta aplicación resulta sumamente útil al crear programas en Python, ya que agiliza considerablemente el proceso de escritura de código. Además, al basarse en un lenguaje cotidiano, es muy sencillo obtener el código deseado simplemente solicitándoselo al programa.
+Al ejecutar el programa, se solicita al usuario que proporcione las instrucciones del código deseado a través de una grabación de voz. 
+Esta grabación es almacenada y transportada a una inteligencia artificial impulsada por AutoGPT 3.5, la cual traduce nuestro mensaje en lenguaje natural a líneas de código para su uso en Python, basándose en prompts ya preestablecidas más las ingresadas por el usuario.
+Así se logra otorgar una mayor libertad y margen de expresión al usuario. También la IA recibe un “archivo.py”, el cual debe ser uno ya existente, para modificarlo según lo indicado.
+Esta aplicación resulta sumamente útil al crear programas en Python, ya que agiliza considerablemente el proceso de escritura de código. Además, al basarse en un lenguaje cotidiano, es muy sencillo obtener el código deseado simplemente solicitándolo al programa.
+
 
 ## Instrucciones de instalación
 
@@ -33,7 +35,16 @@ sudo apt install python-pip
 -pip install SpeechRecognition
 -pip install PyAudio (previamente debemos instalar la dependencia portaudio-devel con el comando: sudo apt-get install portaudio19-dev
 -pip install PyQt5
--sudo apt install libxcb-xinerama0	
+-pip install openai
+-sudo apt install libxcb-xinerama0
+	
+En caso de tener problemas con el sonido en linux se pueden seguir estas posibles soluciones:
+
+1-Si está en una máquina virtual como VirtualBox, active el ingreso de audio en Configuración/Sonido
+2-Es probable que el problema se de también por no tener actualizados o instalados los drivers de sonido, para solucionarlo ejecute el siguiente comando en la terminal de linux: sudo apt install alsa-base alsa-utils
+
+Una vez instalados todos los paquetes, es necesario colocar una key obtenida desde la pagina de la plataforma de Openai (https://platform.openai.com/account/api-keys) en la línea 5 del archivo prompt.py ubicado en la dirección “ProgramaciónPorVoz/textProcessing/processing”
+
 
 ### Clonación del repositorio
 -cd "ruta en la que se creará el repositorio local"
