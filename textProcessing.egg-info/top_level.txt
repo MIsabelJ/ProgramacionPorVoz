@@ -1,3 +1,0 @@
-Interfaz gráfica
-reconocimientoVoz
-textProcessing
