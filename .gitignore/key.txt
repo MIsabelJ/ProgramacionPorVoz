@@ -1,4 +1,0 @@
-Colocar la siguiente key en la línea 5 del archivo prompt.py
-ubicado en la dirección ProgramaciónPorVoz/textProcessing/processing
-
-KEY: "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"
